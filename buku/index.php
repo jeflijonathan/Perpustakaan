@@ -1,56 +1,77 @@
 <?php
-include '../components/navbar.php';
-include '../components/footer.php';
-$navbar =  new Navbar("bahasa");
-$footer = new Footer();
+include '../Layouts/layout.php';
+
+function printStatus($status)
+{
+    if ($status == 1) {
+        return 'Active';
+    } else {
+        return 'Inactive';
+    }
+    return "";
+}
+ob_start()
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Buku</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</head>
+<div class="row mt-3 mb-3">
+    <a href="daftar.php" class="btn btn-primary w-25">Tambah Bahasa</a>
+</div>
+<div class="row mt-3 mb-3">
+    <h3>List Buku</h3>
+</div>
+<div class="row mt-3 mb-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">no</th>
+                <th scope="col">ID Buku</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Nama Penerbit</th>
+                <th scope="col">Category</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Status</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Update At</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $perintah  = "SELECT * FROM tb_buku";
+            $hasil = mysqli_query($koneksi, $perintah);
+            $i = 1;
 
-<body>
-    <?= $navbar->showNavbar(); ?>
-    <div class="container">
-        <a href="" class="btn btn-primary">Daftar</a>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <?= $footer->showFooter(); ?>
+            foreach ($hasil as $data) {
+            ?>
 
-</body>
+                <tr>
+                    <th scope="row"><?= $i ?></th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
 
-</html>
+            <?php
+                $i++;
+            }
+            ?>
+        </tbody>
+    </table>
+</div>
+
+<?php
+
+$partial = ob_get_clean();
+$layout = new Layout(
+    $partial,
+    'List Buku',
+    'buku'
+);
+
+echo $layout->render();

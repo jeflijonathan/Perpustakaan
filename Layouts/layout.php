@@ -1,7 +1,9 @@
 <?php
 include '../config/path.php';
+include '../koneksi/koneksi.php';
 import('@components/navbar.php');
 import('@components/footer.php');
+
 
 class Layout
 {
@@ -14,7 +16,9 @@ class Layout
         $this->partials = $partials;
         $this->titlePage = $titlePage;
         $this->activePage = $activePage;
+        print_r($_ENV);
     }
+
 
     function render(): string
     {
@@ -34,11 +38,15 @@ class Layout
         </head>
 
         <body>
-            <?= $navbar->showNavbar(); ?>
-            <div class="container">
-                <?= $this->partials ?>
+            <div style="overflow-x:hidden; min-height:100vh; border:1px solid;">
+                <?= $navbar->showNavbar(); ?>
+                <div class="container" style="padding-top:4rem;min-height:100vh;">
+                    <?= $this->partials ?>
+                </div>
+                <?= $footer->showFooter(); ?>
+
             </div>
-            <?= $footer->showFooter(); ?>
+
 
         </body>
 
