@@ -66,7 +66,7 @@ $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
     'kategori bahasa',
-    'kategori bahasa'
+    'kategori buku'
 );
 
 echo $layout->render();

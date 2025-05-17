@@ -26,6 +26,7 @@ class Navbar
             ],
             [
                 "label" => "penerbit",
+                "active" => "penerbit",
                 "url" => $basePath . "/penerbit/index.php",
             ],
         ];
