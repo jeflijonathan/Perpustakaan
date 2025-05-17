@@ -42,7 +42,7 @@ ob_start()
                 <tr>
                     <th scope="row"><?= $i ?></th>
                     <td><?= $data["Nama_Bahasa"] ?></td>
-                    <td><?= printStatus($data["status"]) ?? "" ?></td>
+                    <td><?= printStatus($data["Status"]) ?? "" ?></td>
                     <td><?= $data["Created_At"] ?></td>
                     <td><a class="btn btn-warning" href=<?= "ubah.php?id=" . $data["ID_Bahasa"] ?>>Ubah</a></td>
                 </tr>
