@@ -66,7 +66,7 @@ $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
     'List Bahasa',
-    'bahasa'
+    'penerbit'
 );
 
 echo $layout->render();
