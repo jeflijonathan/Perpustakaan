@@ -6,7 +6,7 @@ include "../../koneksi/koneksi.php";
 $bahasa = ucwords($_POST["nama"]) ?? $redirectDaftar;
 $status = true;
 
-$perintah = "INSERT INTO tb_bahasa (Nama_Bahasa, status) VALUES ('$bahasa','$status')";
+$perintah = "INSERT INTO tb_bahasa (Nama_Bahasa, Status) VALUES ('$bahasa','$status')";
 
 $eksekusi = mysqli_query($koneksi, $perintah);
 
