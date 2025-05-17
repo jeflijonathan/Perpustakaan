@@ -2,12 +2,12 @@
 $redirectIndex = "<meta http-equiv='refresh' content='0; url=../index.php'>";
 $redirectDaftar = "<meta http-equiv='refresh' content='0; url=../daftar.php'>";
 
-include "../../koneksi/koneksi.php";
-$bahasa = ucwords($_POST["nama"]) ?? $redirectDaftar;
+$namaPenerbit = $_POST["nama"];
 $status = true;
 
-$perintah = "INSERT INTO tb_bahasa (Nama_Bahasa, Status) VALUES ('$bahasa','$status')";
+include "../../koneksi/koneksi.php";
 
+$perintah  = "INSERT INTO tb_penerbit (Nama_Penerbit, Status) VALUES('$namaPenerbit', '$status')";
 $eksekusi = mysqli_query($koneksi, $perintah);
 
 $cek = mysqli_affected_rows($koneksi);
