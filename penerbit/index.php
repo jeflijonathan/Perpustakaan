@@ -24,7 +24,6 @@ ob_start()
         <thead>
             <tr>
                 <th scope="col">no</th>
-
                 <th scope="col">ID Penerbit</th>
                 <th scope="col">Nama Penerbit</th>
                 <th scope="col">Status</th>
@@ -46,7 +45,7 @@ ob_start()
                     <th scope="row"><?= $i ?></th>
                     <td><?= $data["ID_Penerbit"] ?></td>
                     <td><?= $data["Nama_Penerbit"] ?></td>
-                    <td><?= printStatus($data["status"]) ?? "" ?></td>
+                    <td><?= printStatus($data["Status"]) ?? "" ?></td>
                     <td><?= $data["Created_At"] ?></td>
                     <td><?= $data["Updated_At"] ?></td>
                     <td><a class="btn btn-warning" href=<?= "ubah.php?id=" . $data["ID_Penerbit"] ?>>Ubah</a></td>

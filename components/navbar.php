@@ -25,7 +25,7 @@ class Navbar
                 "url" => $basePath . "/category/index.php",
             ],
             [
-                "label" => "Penerbit",
+                "label" => "penerbit",
                 "url" => $basePath . "/penerbit/index.php",
             ],
         ];
@@ -34,7 +34,7 @@ class Navbar
 
     private function getActiveName(string $label): string
     {
-        if ($label == $this->activeName) {
+        if (strtolower($label) == strtolower($this->activeName)) {
             return "active";
         }
         return "";
