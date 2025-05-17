@@ -3,10 +3,12 @@ $redirectIndex = "<meta http-equiv='refresh' content='0; url=../index.php'>";
 $redirectDaftar = "<meta http-equiv='refresh' content='0; url=../daftar.php'>";
 
 include "../../koneksi/koneksi.php";
-$bahasa = ucwords($_POST["nama"]) ?? $redirectDaftar;
-$status = true;
 
-$perintah = "INSERT INTO tb_bahasa (Nama_Bahasa, Status) VALUES ('$bahasa','$status')";
+$id = $_GET["id"] ?? print($redirectDaftar);
+$nama = $_POST["nama"] ?? print($redirectDaftar);
+$status = $_POST["status"] ?? print($redirectDaftar);
+
+$perintah = "UPDATE tb_penerbit SET Nama_Penerbit='$nama', status= '$status' WHERE ID_Penerbit = '$id'";
 
 $eksekusi = mysqli_query($koneksi, $perintah);
 
@@ -14,11 +16,11 @@ $cek = mysqli_affected_rows($koneksi);
 
 if ($cek > 0) {
     echo "<script>
-        alert('data berhasil tersimpan');
+        alert('data berhasil diubah');
     </script>";
     echo $redirectIndex;
 } else {
     echo  "<script>
-        alert('gagal tersimpan');
+        alert('gagal diubah');
     </script>";
 }
