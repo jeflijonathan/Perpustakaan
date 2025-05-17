@@ -32,7 +32,7 @@ ob_start()
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Penerbit"] ?>" placeholder="Nama Penerbit..." />
+                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Penerbit"] ?>" placeholder="Nama Penerbit..." required />
                     <label for="nama">Nama Penerbit</label>
                 </div>
                 <div class="form-group">
