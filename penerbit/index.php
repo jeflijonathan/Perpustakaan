@@ -14,25 +14,28 @@ ob_start()
 ?>
 
 <div class="row mt-3 mb-3">
-    <a href="daftar.php" class="btn btn-primary w-25">Tambah Bahasa</a>
+    <a href="daftar.php" class="btn btn-primary w-25">Tambah Penerbit</a>
 </div>
 <div class="row mt-3 mb-3">
-    <h3>List Bahasa</h3>
+    <h3>List Penerbit</h3>
 </div>
 <div class="row mt-3 mb-3">
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">no</th>
-                <th scope="col">Bahasa</th>
+
+                <th scope="col">ID Penerbit</th>
+                <th scope="col">Nama Penerbit</th>
                 <th scope="col">Status</th>
-                <th scope="col">Created at</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Updated At</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            $perintah  = "SELECT * FROM tb_bahasa";
+            $perintah  = "SELECT * FROM tb_penerbit";
             $hasil = mysqli_query($koneksi, $perintah);
             $i = 1;
 
@@ -41,9 +44,11 @@ ob_start()
 
                 <tr>
                     <th scope="row"><?= $i ?></th>
-                    <td><?= $data["Nama_Bahasa"] ?></td>
+                    <td><?= $data["ID_Penerbit"] ?></td>
+                    <td><?= $data["Nama_Penerbit"] ?></td>
                     <td><?= printStatus($data["status"]) ?? "" ?></td>
                     <td><?= $data["Created_At"] ?></td>
+                    <td><?= $data["Updated_At"] ?></td>
                     <td><a class="btn btn-warning" href=<?= "ubah.php?id=" . $data["ID_Bahasa"] ?>>Ubah</a></td>
                 </tr>
 

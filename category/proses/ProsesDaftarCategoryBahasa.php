@@ -3,10 +3,10 @@ $redirectIndex = "<meta http-equiv='refresh' content='0; url=../index.php'>";
 $redirectDaftar = "<meta http-equiv='refresh' content='0; url=../daftar.php'>";
 
 include "../../koneksi/koneksi.php";
-$bahasa = ucwords($_POST["nama"]) ?? $redirectDaftar;
+$kategoriBuku = ucwords($_POST["nama"]) ?? $redirectDaftar;
 $status = true;
 
-$perintah = "INSERT INTO tb_bahasa (Nama_Bahasa, status) VALUES ('$bahasa','$status')";
+$perintah = "INSERT INTO tb_kategori (Nama, Status) VALUES ('$kategoriBuku','$status')";
 
 $eksekusi = mysqli_query($koneksi, $perintah);
 

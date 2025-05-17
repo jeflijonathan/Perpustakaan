@@ -2,7 +2,7 @@
 include '../Layouts/layout.php';
 
 $id = $_GET["id"];
-$perintah = "SELECT * FROM tb_bahasa WHERE ID_Bahasa = '$id'";
+$perintah = "SELECT * FROM tb_bahasa WHERE id = '$id'";
 $eksekusi = mysqli_query($koneksi, $perintah);
 $data = mysqli_fetch_array($eksekusi);
 
@@ -25,15 +25,15 @@ ob_start()
 
 <div class="row mt-3 mb-3 justify-content-center">
     <div class="card p-0">
-        <form action=<?= "proses/ProsesUpdate.php?id=" . $data["ID_Bahasa"] ?> method="POST">
+        <form action=<?= "proses/ProsesUpdate.php?id=" . $data["id"] ?> method="POST">
 
             <div class="card-header">
-                <h3>Form Update Bahasa</h3>
+                <h3>Form Update Kategori Buku</h3>
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Bahasa"] ?>" placeholder="Nama Bahasa..." />
-                    <label for="nama">Nama Bahasa</label>
+                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["nama"] ?>" placeholder="Nama Bahasa..." />
+                    <label for="nama">Nama Kategori Buku</label>
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
@@ -56,8 +56,8 @@ ob_start()
 $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
-    'Update Bahasa',
-    'bahasa'
+    'Update Kategori Buku',
+    'kategori buku'
 );
 
 echo $layout->render();

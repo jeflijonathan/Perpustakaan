@@ -15,11 +15,13 @@ ob_start()
 ?>
 
 <div class="row mt-3 mb-3">
-    <a href="daftar.php" class="btn btn-primary w-25">Tambah Bahasa</a>
+    <a href="daftar.php" class="btn btn-primary w-50">Tambah Kategori Buku</a>
 </div>
+
 <div class="row mt-3 mb-3">
     <h3>List Category Buku</h3>
 </div>
+
 <div class="row mt-3 mb-3">
     <table class="table">
         <thead>
@@ -47,7 +49,7 @@ ob_start()
                     <td><?= $data["Nama"] ?></td>
                     <td><?= printStatus($data["Status"]) ?? "" ?></td>
                     <td><?= $data["Created_At"] ?></td>
-                    <td><a class="btn btn-warning" href=<?= "ubah.php?id=" . $data["id"] ?>>Ubah</a></td>
+                    <td><a class="btn btn-warning" href=<?= "ubah.php?id=" . $data["ID_Kategori"] ?>>Ubah</a></td>
                 </tr>
 
             <?php
@@ -63,8 +65,8 @@ ob_start()
 $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
-    'Category Buku',
-    'category buku'
+    'kategori bahasa',
+    'kategori bahasa'
 );
 
 echo $layout->render();
