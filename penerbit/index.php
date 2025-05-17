@@ -49,7 +49,7 @@ ob_start()
                     <td><?= printStatus($data["status"]) ?? "" ?></td>
                     <td><?= $data["Created_At"] ?></td>
                     <td><?= $data["Updated_At"] ?></td>
-                    <td><a class="btn btn-warning" href=<?= "ubah.php?id=" . $data["ID_Bahasa"] ?>>Ubah</a></td>
+                    <td><a class="btn btn-warning" href=<?= "ubah.php?id=" . $data["ID_Penerbit"] ?>>Ubah</a></td>
                 </tr>
 
             <?php
