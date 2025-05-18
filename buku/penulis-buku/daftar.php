@@ -21,7 +21,7 @@ ob_start();
 ?>
 
 <div class="row mt-3 mb-3 text-capitalize">
-    <a href="index.php" class="nav-link text-gray">Click back | List Penulis Buku</a>
+    <a href="../index.php" class="nav-link text-gray">Click back | List Penulis Buku</a>
 </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
@@ -37,7 +37,7 @@ ob_start();
                     <label for="penulis">Pilih Penulis</label>
 
                     <select class="form-select mt-2 mb-2" id="penulis" name="ID_Penulis" required>
-                        <option disabled selected>-- Pilih Penulis --</option>
+                        <option disabled value="" selected>-- Pilih Penulis --</option>
                         <?= fetchPenulis($queryPenulis) ?>
                     </select>
                 </div>
@@ -58,6 +58,6 @@ ob_start();
 
 <?php
 $partial = ob_get_clean();
-$layout = new Layout($partial, 'Daftar Penulis Buku', 'penulis buku');
+$layout = new Layout($partial, 'Tambah Penulis Buku', 'buku');
 echo $layout->render();
 ?>
