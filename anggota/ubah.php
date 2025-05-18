@@ -64,7 +64,7 @@ ob_start()
 $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
-    'Daftar Anggota',
+    'Update Anggota',
     'anggota'
 );
 
