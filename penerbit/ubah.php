@@ -20,7 +20,7 @@ ob_start()
 ?>
 
 <div class="row mt-3 mb-3 text-capitalize">
-    <a href="index.php" class="nav-link text-gray">Click back | List Bahasa </a>
+    <a href="index.php" class="nav-link text-gray">Click back | List Penerbit </a>
 </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
