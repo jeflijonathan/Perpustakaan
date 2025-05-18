@@ -1,7 +1,7 @@
 <?php
 $redirectIndex = "<meta http-equiv='refresh' content='0; url=../index.php'>";
 $redirectDaftar = "<meta http-equiv='refresh' content='0; url=../daftar.php'>";
-$id = $_GET["ID_Buku"];
+$ID_Buku = $_GET["ID_Buku"];
 $judul = $_POST["judul"];
 $ID_Penerbit = $_POST["ID_Penerbit"];
 $ID_Bahasa = $_POST["ID_Bahasa"];
@@ -18,7 +18,7 @@ $perintah = "UPDATE tb_buku SET
     ID_Kategori = '$ID_Kategori', 
     Stok = '$stok', 
     Status = '$status'
-    WHERE ID_Buku = '$id'";
+    WHERE ID_Buku = '$ID_Buku'";
 
 $eksekusi = mysqli_query($koneksi, $perintah);
 

@@ -21,7 +21,7 @@ ob_start();
 ?>
 
 <div class="row mt-3 mb-3 text-capitalize">
-    <a href="index.php" class="nav-link text-gray">Click back | List Penulis Buku</a>
+    <a href="../index.php" class="nav-link text-gray">Click back | List Penulis Buku</a>
 </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
@@ -58,6 +58,6 @@ ob_start();
 
 <?php
 $partial = ob_get_clean();
-$layout = new Layout($partial, 'Daftar Penulis Buku', 'penulis buku');
+$layout = new Layout($partial, 'Tambah Penulis Buku', 'buku');
 echo $layout->render();
 ?>
