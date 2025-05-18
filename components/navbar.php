@@ -32,7 +32,10 @@ class Navbar
                 "label" => "penulis",
                 "url" => $basePath . "/penulis/index.php",
             ],
-
+            [
+                "label" => "anggota",
+                "url" => $basePath . "/anggota/index.php",
+            ],
         ];
         $this->activeName = $activeName;
     }
