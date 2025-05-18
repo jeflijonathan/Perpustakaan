@@ -2,7 +2,7 @@
 include '../Layouts/layout.php';
 
 $id = $_GET["id"];
-$perintah = "SELECT * FROM tb_kategori WHERE ID_Kategori = '$id'";
+$perintah = "SELECT * FROM tb_penulis WHERE ID_Penulis = '$id'";
 $eksekusi = mysqli_query($koneksi, $perintah);
 $data = mysqli_fetch_array($eksekusi);
 
@@ -20,20 +20,20 @@ ob_start()
 ?>
 
 <div class="row mt-3 mb-3 text-capitalize">
-    <a href="index.php" class="nav-link text-gray">Click back | List Kategori Buku</a>
+    <a href="index.php" class="nav-link text-gray">Click back | List Bahasa </a>
 </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
     <div class="card p-0">
-        <form action=<?= "proses/ProsesUpdateKategoriBuku.php?id=" . $data["ID_Kategori"] ?> method="POST">
+        <form action=<?= "proses/ProsesUpdate.php?id=" . $data["ID_Penulis"] ?> method="POST">
 
             <div class="card-header">
-                <h3>Form Update Kategori Buku</h3>
+                <h3>Form Update Penulis</h3>
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama"] ?>" placeholder="Nama Kategori..." required />
-                    <label for="nama">Nama Kategori Buku</label>
+                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Penulis"] ?>" placeholder="Nama Penulis..." />
+                    <label for="nama">Nama Penulis</label>
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
@@ -56,8 +56,8 @@ ob_start()
 $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
-    'Update Kategori Buku',
-    'kategori buku'
+    'Update Penulis Buku',
+    'penulis-buku'
 );
 
 echo $layout->render();

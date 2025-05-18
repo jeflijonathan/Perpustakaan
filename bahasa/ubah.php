@@ -37,8 +37,8 @@ ob_start()
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <input type="radio" id="status" name="status" value="1" <?= handleActiveOptionStatus("1", $data["status"]) ?> /> Active
-                    <input type="radio" id="status" name="status" value="0" <?= handleActiveOptionStatus("0", $data["status"]) ?> /> Inactive
+                    <input type="radio" id="status" name="status" value="1" <?= handleActiveOptionStatus("1", $data["Status"]) ?> /> Active
+                    <input type="radio" id="status" name="status" value="0" <?= handleActiveOptionStatus("0", $data["Status"]) ?> /> Inactive
                 </div>
             </div>
 

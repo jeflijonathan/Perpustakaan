@@ -1,6 +1,7 @@
 <?php
-include '../config/path.php';
-include '../koneksi/koneksi.php';
+include __DIR__ . '/../config/path.php';
+include __DIR__ . '/../koneksi/koneksi.php';
+
 import('@components/navbar.php');
 import('@components/footer.php');
 
