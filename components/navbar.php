@@ -33,6 +33,10 @@ class Navbar
                 "url" => $basePath . "/buku/index.php",
             ],
             [
+                "label" => "anggota",
+                "url" => $basePath . "/anggota/index.php",
+            ],
+            [
                 "label" => "peminjaman buku",
                 "url" => $basePath . "/peminjaman-buku/index.php",
             ],
