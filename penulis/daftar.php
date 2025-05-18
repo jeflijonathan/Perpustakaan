@@ -19,8 +19,16 @@ ob_start()
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Penulis..." />
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Penulis..." required />
                     <label for="nama" class="form-floatingInput">Nama Penulis</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Nama Penulis..." required />
+                    <label for="email" class="form-floatingInput">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" id="no_tlp" name="no_tlp" class="form-control" placeholder="Nama Penulis..." required />
+                    <label for="no_tlp" class="form-floatingInput">No Telephon</label>
                 </div>
             </div>
 
@@ -38,8 +46,9 @@ ob_start()
 $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
-    'Daftar Penerbit',
-    'penerbit'
+    'Daftar Penulis',
+    'penulis'
 );
 
 echo $layout->render();
+

@@ -19,7 +19,7 @@ ob_start()
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Bahasa..." />
+                    <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Bahasa..." required />
                     <label for="nama" class="form-floatingInput">Nama Kategori Buku</label>
                 </div>
             </div>

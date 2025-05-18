@@ -1,15 +1,14 @@
 <?php
-
 $redirectIndex = "<meta http-equiv='refresh' content='0; url=../index.php'>";
 $redirectDaftar = "<meta http-equiv='refresh' content='0; url=../daftar.php'>";
 
 include "../../koneksi/koneksi.php";
 
-$id = $_GET["id"] ?? $redirectDaftar;
-$nama = $_POST["nama"] ?? $redirectDaftar;
-$status = $_POST["status"] ?? $redirectDaftar;
+$id = $_GET["id"] ?? print($redirectDaftar);
+$nama = $_POST["nama"] ?? print($redirectDaftar);
+$status = $_POST["status"] ?? print($redirectDaftar);
 
-$perintah = "UPDATE tb_kategori SET Nama='$nama', status= '$status' WHERE ID_Kategori = '$id'";
+$perintah = "UPDATE tb_penulis SET Nama_Penulis='$nama', status= '$status' WHERE ID_Penulis = '$id'";
 
 $eksekusi = mysqli_query($koneksi, $perintah);
 

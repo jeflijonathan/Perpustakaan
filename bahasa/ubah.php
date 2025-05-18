@@ -32,13 +32,13 @@ ob_start()
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Bahasa"] ?>" placeholder="Nama Bahasa..." />
+                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Bahasa"] ?>" placeholder="Nama Bahasa..." required />
                     <label for="nama">Nama Bahasa</label>
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <input type="radio" id="status" name="status" value="1" <?= handleActiveOptionStatus("1", $data["status"]) ?> /> Active
-                    <input type="radio" id="status" name="status" value="0" <?= handleActiveOptionStatus("0", $data["status"]) ?> /> Inactive
+                    <input type="radio" id="status" name="status" value="1" <?= handleActiveOptionStatus("1", $data["Status"]) ?> /> Active
+                    <input type="radio" id="status" name="status" value="0" <?= handleActiveOptionStatus("0", $data["Status"]) ?> /> Inactive
                 </div>
             </div>
 

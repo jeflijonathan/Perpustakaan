@@ -2,16 +2,19 @@
 $redirectIndex = "<meta http-equiv='refresh' content='0; url=../index.php'>";
 $redirectDaftar = "<meta http-equiv='refresh' content='0; url=../daftar.php'>";
 
-$namaPenulis = $_POST["nama"];
-$email = $_POST["email"];
-$no_telp = $_POST["no_tlp"];
-
+$judul = $_POST["judul"];
+$ID_Penerbit = $_POST["ID_Penerbit"];
+$ID_Bahasa = $_POST["ID_Bahasa"];
+$ID_Kategori = $_POST["ID_Kategori"];
+$stok = $_POST["stok"];
 $status = true;
 
 include "../../koneksi/koneksi.php";
 
-$perintah  = "INSERT INTO tb_penulis (Nama_Penulis, Email, No_Telepon, Status) VALUES('$namaPenulis', '$email', '$no_telp', '$status')";
+$perintah  = "INSERT INTO tb_buku (Judul, ID_Penerbit, ID_Bahasa, ID_Kategori, Stok, Status) 
+VALUES('$judul', '$ID_Penerbit', '$ID_Bahasa', '$ID_Kategori', '$stok', '$status')";
 $eksekusi = mysqli_query($koneksi, $perintah);
+
 $cek = mysqli_affected_rows($koneksi);
 
 if ($cek > 0) {

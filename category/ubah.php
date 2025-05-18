@@ -2,7 +2,7 @@
 include '../Layouts/layout.php';
 
 $id = $_GET["id"];
-$perintah = "SELECT * FROM tb_bahasa WHERE id = '$id'";
+$perintah = "SELECT * FROM tb_kategori WHERE ID_Kategori = '$id'";
 $eksekusi = mysqli_query($koneksi, $perintah);
 $data = mysqli_fetch_array($eksekusi);
 
@@ -20,25 +20,25 @@ ob_start()
 ?>
 
 <div class="row mt-3 mb-3 text-capitalize">
-    <a href="index.php" class="nav-link text-gray">Click back | List Bahasa </a>
+    <a href="index.php" class="nav-link text-gray">Click back | List Kategori Buku</a>
 </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
     <div class="card p-0">
-        <form action=<?= "proses/ProsesUpdate.php?id=" . $data["id"] ?> method="POST">
+        <form action=<?= "proses/ProsesUpdateKategoriBuku.php?id=" . $data["ID_Kategori"] ?> method="POST">
 
             <div class="card-header">
                 <h3>Form Update Kategori Buku</h3>
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["nama"] ?>" placeholder="Nama Bahasa..." />
+                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama"] ?>" placeholder="Nama Kategori..." required />
                     <label for="nama">Nama Kategori Buku</label>
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <input type="radio" id="status" name="status" value="1" <?= handleActiveOptionStatus("1", $data["status"]) ?> /> Active
-                    <input type="radio" id="status" name="status" value="0" <?= handleActiveOptionStatus("0", $data["status"]) ?> /> Inactive
+                    <input type="radio" id="status" name="status" value="1" <?= handleActiveOptionStatus("1", $data["Status"]) ?> /> Active
+                    <input type="radio" id="status" name="status" value="0" <?= handleActiveOptionStatus("0", $data["Status"]) ?> /> Inactive
                 </div>
             </div>
 

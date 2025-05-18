@@ -67,8 +67,8 @@ ob_start()
 $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
-    'List Bahasa',
-    'penerbit'
+    'List Penulis',
+    'penulis'
 );
 
 echo $layout->render();
