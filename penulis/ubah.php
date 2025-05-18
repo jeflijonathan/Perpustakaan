@@ -35,6 +35,14 @@ ob_start()
                     <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Penulis"] ?>" placeholder="Nama Penulis..." />
                     <label for="nama">Nama Penulis</label>
                 </div>
+                <div class="form-floating mb-3">
+                    <input type="text" id="no_tlp" name="no_tlp" class="form-control" value="<?= $data["No_Telepon"] ?>" placeholder="Nomor Telephon..." />
+                    <label for="no_tlp">Nomor Telephon</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" id="email" name="email" class="form-control" value="<?= $data["Email"] ?>" placeholder="Nomor Telephon..." />
+                    <label for="no_tlp">Email</label>
+                </div>
                 <div class="form-group">
                     <label for="status">Status</label>
                     <input type="radio" id="status" name="status" value="1" <?= handleActiveOptionStatus("1", $data["Status"]) ?> /> Active

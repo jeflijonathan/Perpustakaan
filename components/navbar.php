@@ -32,6 +32,18 @@ class Navbar
                 "label" => "buku",
                 "url" => $basePath . "/buku/index.php",
             ],
+            [
+                "label" => "anggota",
+                "url" => $basePath . "/anggota/index.php",
+            ],
+            [
+                "label" => "peminjaman buku",
+                "url" => $basePath . "/peminjaman-buku/index.php",
+            ],
+            [
+                "label" => "riwayat peminjaman",
+                "url" => $basePath . "/riwayat-peminjaman/index.php",
+            ],
 
         ];
         $this->activeName = $activeName;

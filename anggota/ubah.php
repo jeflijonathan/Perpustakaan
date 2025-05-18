@@ -2,7 +2,7 @@
 include '../Layouts/layout.php';
 
 $id = $_GET["id"];
-$perintah = "SELECT * FROM tb_penerbit WHERE ID_Penerbit = '$id'";
+$perintah = "SELECT * FROM tb_anggota WHERE ID_Anggota = '$id'";
 $eksekusi = mysqli_query($koneksi, $perintah);
 $data = mysqli_fetch_array($eksekusi);
 
@@ -20,20 +20,28 @@ ob_start()
 ?>
 
 <div class="row mt-3 mb-3 text-capitalize">
-    <a href="index.php" class="nav-link text-gray">Click back | List Bahasa </a>
+    <a href="index.php" class="nav-link text-gray">Click back | List Anggota </a>
 </div>
 
 <div class="row mt-3 mb-3 justify-content-center">
     <div class="card p-0">
-        <form action=<?= "proses/ProsesUpdate.php?id=" . $data["ID_Penerbit"] ?> method="POST">
+        <form action=<?= "proses/ProsesUpdate.php?id=" . $data["ID_Anggota"] ?> method="POST">
 
             <div class="card-header">
-                <h3>Form Update Penerbit</h3>
+                <h3>Form Update Anggota</h3>
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Penerbit"] ?>" placeholder="Nama Penerbit..." required />
-                    <label for="nama">Nama Penerbit</label>
+                    <input type="text" id="nama" name="nama" class="form-control" value="<?= $data["Nama_Anggota"] ?>" placeholder="Nama Anggota..." />
+                    <label for="nama">Nama Anggota</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" id="email" name="email" class="form-control" value="<?= $data["Email"] ?>" placeholder="Email..." />
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" id="noTelepon" name="noTelepon" class="form-control" value="<?= $data["No_Telepon"] ?>" placeholder="No Telepon..." />
+                    <label for="noTelepon">No Telepon</label>
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
@@ -56,8 +64,8 @@ ob_start()
 $partial = ob_get_clean();
 $layout = new Layout(
     $partial,
-    'Update Penerbit',
-    'penerbit'
+    'Update Anggota',
+    'anggota'
 );
 
 echo $layout->render();

@@ -37,7 +37,7 @@ ob_start();
                     <label for="penulis">Pilih Penulis</label>
 
                     <select class="form-select mt-2 mb-2" id="penulis" name="ID_Penulis" required>
-                        <option disabled selected>-- Pilih Penulis --</option>
+                        <option disabled value="" selected>-- Pilih Penulis --</option>
                         <?= fetchPenulis($queryPenulis) ?>
                     </select>
                 </div>
