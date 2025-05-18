@@ -80,7 +80,12 @@ ob_start()
 </div>
 <div class="row mt-3 mb-3 gap-3 justify-content-center align-items-center">
     <?php
-    $perintah  = "SELECT * FROM tb_buku";
+    $IDLihat = $_GET["ID"] ?? "";
+    $getID = "";
+    if ($IDLihat != "") {
+        $getID =  " WHERE ID_Buku = '$IDLihat'";
+    }
+    $perintah  = "SELECT * FROM tb_buku" . $getID;
     $hasil = mysqli_query($koneksi, $perintah);
     $i = 1;
 

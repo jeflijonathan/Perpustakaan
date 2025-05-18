@@ -48,6 +48,7 @@ ob_start()
                     <td><?= $data["ID_Penulis"] ?></td>
                     <td><?= $data["Nama_Penulis"] ?></td>
                     <td><?= $data["Email"] ?></td>
+                    <td><?= $data["No_Telepon"] ?></td>
                     <td><?= $data["Created_At"] ?></td>
                     <td><?= $data["Updated_At"] ?></td>
                     <td><?= printStatus($data["Status"]) ?? "" ?></td>

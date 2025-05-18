@@ -35,6 +35,7 @@ function handleSelected($value, $selectedValue)
     }
 }
 
+
 ob_start();
 ?>
 
@@ -44,7 +45,7 @@ ob_start();
 
 <div class="row mt-3 mb-3 justify-content-center">
     <div class="card p-0">
-        <form action=<?= "proses/ProsesUpdate.php?id=" . $dataBuku["ID_Buku"] ?> method="POST">
+        <form action=<?= "proses/ProsesUpdate.php?ID_Buku=" . $dataBuku["ID_Buku"] ?> method="POST">
 
             <div class="card-header">
                 <h3>Form Update Buku</h3>
@@ -60,7 +61,8 @@ ob_start();
                         <option value="" disabled>-- Pilih Penerbit --</option>
                         <?php while ($data = mysqli_fetch_array($penerbit)) : ?>
                             <option
-                                value="<?= $data['ID_Penerbit'] ?>">
+                                value="<?= $data['ID_Penerbit'] ?>"
+                                <?= handleSelected($data['ID_Penerbit'], $dataBuku['Id_Penerbit']) ?>>
                                 <?= $data['Nama_Penerbit'] ?>
                             </option>
                         <?php endwhile; ?>
@@ -73,7 +75,9 @@ ob_start();
                     <select name="ID_Bahasa" id="ID_Bahasa" class="form-select" required>
                         <option value="" disabled>-- Pilih Bahasa --</option>
                         <?php while ($data = mysqli_fetch_array($bahasa)) : ?>
-                            <option value="<?= $data['ID_Bahasa'] ?>"><?= $data['Nama_Bahasa'] ?></option>
+                            <option
+                                value="<?= $data['ID_Bahasa'] ?>"
+                                <?= handleSelected($data['ID_Bahasa'], $dataBuku['ID_Bahasa']) ?>><?= $data['Nama_Bahasa'] ?></option>
                         <?php endwhile; ?>
                     </select>
                     <label for="ID_Bahasa">Bahasa</label>
@@ -83,7 +87,8 @@ ob_start();
                     <select name="ID_Kategori" id="ID_Kategori" class="form-select" required>
                         <option value="" disabled>-- Pilih Kategori --</option>
                         <?php while ($data = mysqli_fetch_array($kategori)) : ?>
-                            <option value="<?= $data['ID_Kategori'] ?>"><?= $data['Nama'] ?></option>
+                            <option value="<?= $data['ID_Kategori'] ?>"
+                                <?= handleSelected($data['ID_Kategori'], $dataBuku['ID_Kategori']) ?>><?= $data['Nama'] ?></option>
                         <?php endwhile; ?>
                     </select>
                     <label for="ID_Kategori">Kategori</label>

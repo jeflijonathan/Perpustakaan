@@ -17,10 +17,6 @@ class Navbar
                 "url" => $basePath . "/bahasa/index.php",
             ],
             [
-                "label" => "buku",
-                "url" => $basePath . "/buku/index.php",
-            ],
-            [
                 "label" => "kategori buku",
                 "url" => $basePath . "/category/index.php",
             ],
@@ -33,9 +29,18 @@ class Navbar
                 "url" => $basePath . "/penulis/index.php",
             ],
             [
-                "label" => "anggota",
-                "url" => $basePath . "/anggota/index.php",
+                "label" => "buku",
+                "url" => $basePath . "/buku/index.php",
             ],
+            [
+                "label" => "peminjaman buku",
+                "url" => $basePath . "/peminjaman-buku/index.php",
+            ],
+            [
+                "label" => "riwayat peminjaman",
+                "url" => $basePath . "/riwayat-peminjaman/index.php",
+            ],
+
         ];
         $this->activeName = $activeName;
     }
@@ -72,7 +77,7 @@ class Navbar
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                           {$this->printMenu()}
                         </ul>
                     </div>
